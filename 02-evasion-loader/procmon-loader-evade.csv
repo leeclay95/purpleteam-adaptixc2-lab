@@ -1,0 +1,129 @@
+﻿"Time of Day","Process Name","PID","Operation","Path","Result","Detail"
+"10:07:22.4728989 AM","loader2.exe","2056","Process Start","","SUCCESS","Parent PID: 5144, Command line: ""C:\Users\test_user\Documents\loader2.exe"" , Current directory: C:\Users\test_user\Documents\, Environment: ;	=::=::\;	ALLUSERSPROFILE=C:\ProgramData;	APPDATA=C:\Users\test_user\AppData\Roaming;	CommonProgramFiles=C:\Program Files\Common Files;	CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files;	CommonProgramW6432=C:\Program Files\Common Files;	COMPUTERNAME=DESKTOP-N46SBV9;	ComSpec=C:\Windows\system32\cmd.exe;	DriverData=C:\Windows\System32\Drivers\DriverData;	FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer;	FPS_BROWSER_USER_PROFILE_STRING=Default;	HOMEDRIVE=C:;	HOMEPATH=\Users\test_user;	JAVA_HOME=C:\Java\jdk-21.0.2+13;	LOCALAPPDATA=C:\Users\test_user\AppData\Local;	LOGONSERVER=\\DESKTOP-N46SBV9;	NUMBER_OF_PROCESSORS=1;	OneDrive=C:\Users\test_user\OneDrive;	OS=Windows_NT;	Path=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Sysinternals;C:\Java\jdk-21.0.2+13\bin;C:\NASM;C:\MinGW\mingw64\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Sysinternals;C:\Users\test_user\AppData\Local\Microsoft\WindowsApps;C:\Users\test_user\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\test_user\.dotnet\tools;C:\Users\test_user\Downloads\DefenderCheck\DefenderCheck\DefenderCheck\bin\Release\net8.0-windows;	PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;	PROCESSOR_ARCHITECTURE=AMD64;	PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 197 Stepping 2, GenuineIntel;	PROCESSOR_LEVEL=6;	PROCESSOR_REVISION=c502;	ProgramData=C:\ProgramData;	ProgramFiles=C:\Program Files;	ProgramFiles(x86)=C:\Program Files (x86);	ProgramW6432=C:\Program Files;	PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;	PUBLIC=C:\Users\Public;	SESSIONNAME=Console;	SystemDrive=C:;	SystemRoot=C:\Windows;	TEMP=C:\Users\TEST_U~1\AppData\Local\Temp;	TMP=C:\Users\TEST_U~1\AppData\Local\Temp;	USERDOMAIN=DESKTOP-N46SBV9;	USERDOMAIN_ROAMINGPROFILE=DESKTOP-N46SBV9;	USERNAME=test_user;	USERPROFILE=C:\Users\test_user;	windir=C:\Windows"
+"10:07:22.4729038 AM","loader2.exe","2056","Thread Create","","SUCCESS","Thread ID: 4496"
+"10:07:22.4922389 AM","loader2.exe","2056","Load Image","C:\Users\test_user\Documents\loader2.exe","SUCCESS","Image Base: 0x7ff708230000, Image Size: 0x8000"
+"10:07:22.4922677 AM","loader2.exe","2056","Load Image","C:\Windows\System32\ntdll.dll","SUCCESS","Image Base: 0x7fff56210000, Image Size: 0x1f8000"
+"10:07:22.4923808 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Session Manager","REPARSE","Desired Access: Query Value"
+"10:07:22.4923915 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Session Manager","SUCCESS","Desired Access: Query Value"
+"10:07:22.4924015 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Session Manager\RaiseExceptionOnPossibleDeadlock","NAME NOT FOUND","Length: 80"
+"10:07:22.4924106 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Control\Session Manager","SUCCESS",""
+"10:07:22.4924199 AM","loader2.exe","2056","RegOpenKey","HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Segment Heap","REPARSE","Desired Access: Query Value"
+"10:07:22.4924255 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Session Manager\Segment Heap","NAME NOT FOUND","Desired Access: Query Value"
+"10:07:22.4924487 AM","loader2.exe","2056","RegOpenKey","HKLM\SYSTEM\CurrentControlSet\Control\Session Manager","REPARSE","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.4924539 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Session Manager","SUCCESS","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.4924597 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Session Manager\ResourcePolicies","NAME NOT FOUND","Length: 24"
+"10:07:22.4924657 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Control\Session Manager","SUCCESS",""
+"10:07:22.4926457 AM","loader2.exe","2056","CreateFile","C:\Users\test_user\Documents","SUCCESS","Desired Access: Execute/Traverse, Synchronize, Disposition: Open, Options: Directory, Synchronous IO Non-Alert, Attributes: n/a, ShareMode: Read, Write, AllocationSize: n/a, OpenResult: Opened"
+"10:07:22.4927132 AM","loader2.exe","2056","Load Image","C:\Windows\System32\kernel32.dll","SUCCESS","Image Base: 0x7fff554c0000, Image Size: 0xc2000"
+"10:07:22.4928992 AM","loader2.exe","2056","Load Image","C:\Windows\System32\KernelBase.dll","SUCCESS","Image Base: 0x7fff53d00000, Image Size: 0x2f6000"
+"10:07:22.4934281 AM","loader2.exe","2056","CreateFile","C:\Windows\System32\conhost.exe","SUCCESS","Desired Access: Execute/Traverse, Synchronize, Disposition: Open, Options: Synchronous IO Non-Alert, Non-Directory File, Attributes: N, ShareMode: Read, Delete, AllocationSize: n/a, OpenResult: Opened"
+"10:07:22.4934652 AM","loader2.exe","2056","CreateFileMapping","C:\Windows\System32\conhost.exe","FILE LOCKED WITH ONLY READERS","SyncType: SyncTypeCreateSection, PageProtection: "
+"10:07:22.4934793 AM","loader2.exe","2056","CreateFileMapping","C:\Windows\System32\conhost.exe","SUCCESS","SyncType: SyncTypeOther"
+"10:07:22.4934980 AM","loader2.exe","2056","RegOpenKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Conhost.exe","NAME NOT FOUND","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.4935234 AM","loader2.exe","2056","QuerySecurityFile","C:\Windows\System32\conhost.exe","SUCCESS","Information: Label"
+"10:07:22.4935463 AM","loader2.exe","2056","QueryNameInformationFile","C:\Windows\System32\conhost.exe","SUCCESS","Name: \Windows\System32\conhost.exe"
+"10:07:22.4952393 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000","SUCCESS","Desired Access: All Access"
+"10:07:22.4952507 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000\\Device\HarddiskVolume3\Windows\System32\conhost.exe","SUCCESS","Type: REG_BINARY, Length: 24, Data: 12 2E 79 16 3C F4 DC 01 00 00 00 00 00 00 00 00"
+"10:07:22.4952656 AM","loader2.exe","2056","RegSetValue","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000\\Device\HarddiskVolume3\Windows\System32\conhost.exe","SUCCESS","Type: REG_BINARY, Length: 24, Data: ED 99 24 3A 3C F4 DC 01 00 00 00 00 00 00 00 00"
+"10:07:22.4953442 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000","SUCCESS",""
+"10:07:22.4953528 AM","loader2.exe","2056","RegOpenKey","HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\BAM","REPARSE","Desired Access: Query Value"
+"10:07:22.4953613 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Session Manager\BAM","NAME NOT FOUND","Desired Access: Query Value"
+"10:07:22.4954283 AM","loader2.exe","2056","CreateFile","C:\Windows\System32\conhost.exe","SUCCESS","Desired Access: Read Attributes, Disposition: Open, Options: Non-Directory File, Attributes: n/a, ShareMode: Read, Write, AllocationSize: n/a, OpenResult: Opened"
+"10:07:22.4954445 AM","loader2.exe","2056","CloseFile","C:\Windows\System32\conhost.exe","SUCCESS",""
+"10:07:22.4954883 AM","loader2.exe","2056","QueryNameInformationFile","C:\Windows\System32\conhost.exe","SUCCESS","Name: \Windows\System32\conhost.exe"
+"10:07:22.4955351 AM","loader2.exe","2056","CreateFile","C:\Windows\System32\conhost.exe","SUCCESS","Desired Access: Read Data/List Directory, Read Attributes, Synchronize, Disposition: Open, Options: Sequential Access, Synchronous IO Alert, Non-Directory File, Attributes: N, ShareMode: Read, Delete, AllocationSize: n/a, OpenResult: Opened"
+"10:07:22.4955572 AM","loader2.exe","2056","QueryAllInformationFile","C:\Windows\System32\conhost.exe","SUCCESS","CreationTime: 4/1/2026 3:53:53 PM, LastAccessTime: 6/4/2026 10:07:11 AM, LastWriteTime: 4/1/2026 3:53:53 PM, ChangeTime: 4/16/2026 2:27:07 PM, FileAttributes: A, AllocationSize: 868,352, EndOfFile: 867,840"
+"10:07:22.4955807 AM","loader2.exe","2056","CloseFile","C:\Windows\System32\conhost.exe","SUCCESS",""
+"10:07:22.4956049 AM","loader2.exe","2056","Process Create","C:\Windows\System32\Conhost.exe","SUCCESS","PID: 2668, Command line: \??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1"
+"10:07:22.4956183 AM","loader2.exe","2056","CloseFile","C:\Windows\System32\conhost.exe","SUCCESS",""
+"10:07:22.8397561 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\StateSeparation\RedirectionMap\Keys","REPARSE","Desired Access: Read"
+"10:07:22.8397735 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\StateSeparation\RedirectionMap\Keys","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8398402 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Terminal Server","REPARSE","Desired Access: Read"
+"10:07:22.8398472 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Terminal Server","SUCCESS","Desired Access: Read"
+"10:07:22.8398594 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Terminal Server\TSAppCompat","NAME NOT FOUND","Length: 548"
+"10:07:22.8398668 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Terminal Server\TSUserEnabled","SUCCESS","Type: REG_DWORD, Length: 4, Data: 0"
+"10:07:22.8398758 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Control\Terminal Server","SUCCESS",""
+"10:07:22.8400011 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\SafeBoot\Option","REPARSE","Desired Access: Query Value, Set Value"
+"10:07:22.8400073 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\SafeBoot\Option","NAME NOT FOUND","Desired Access: Query Value, Set Value"
+"10:07:22.8400165 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Srp\GP\DLL","REPARSE","Desired Access: Read"
+"10:07:22.8400217 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Srp\GP\DLL","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8400306 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers","SUCCESS","Desired Access: Query Value"
+"10:07:22.8400433 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers\TransparentEnabled","NAME NOT FOUND","Length: 80"
+"10:07:22.8400521 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Policies\Microsoft\Windows\safer\codeidentifiers","SUCCESS",""
+"10:07:22.8400607 AM","loader2.exe","2056","RegOpenKey","HKCU\Software\Policies\Microsoft\Windows\Safer\CodeIdentifiers","NAME NOT FOUND","Desired Access: Query Value"
+"10:07:22.8400787 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\FileSystem\","REPARSE","Desired Access: Read"
+"10:07:22.8400839 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\FileSystem","SUCCESS","Desired Access: Read"
+"10:07:22.8400907 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\FileSystem\LongPathsEnabled","SUCCESS","Type: REG_DWORD, Length: 4, Data: 0"
+"10:07:22.8400972 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Control\FileSystem","SUCCESS",""
+"10:07:22.8402319 AM","loader2.exe","2056","Load Image","C:\Windows\System32\user32.dll","SUCCESS","Image Base: 0x7fff55e40000, Image Size: 0x1a1000"
+"10:07:22.8403207 AM","loader2.exe","2056","Load Image","C:\Windows\System32\win32u.dll","SUCCESS","Image Base: 0x7fff53cd0000, Image Size: 0x22000"
+"10:07:22.8403875 AM","loader2.exe","2056","Load Image","C:\Windows\System32\gdi32.dll","SUCCESS","Image Base: 0x7fff54aa0000, Image Size: 0x2b000"
+"10:07:22.8404587 AM","loader2.exe","2056","Load Image","C:\Windows\System32\gdi32full.dll","SUCCESS","Image Base: 0x7fff539d0000, Image Size: 0x119000"
+"10:07:22.8405302 AM","loader2.exe","2056","Load Image","C:\Windows\System32\msvcp_win.dll","SUCCESS","Image Base: 0x7fff538a0000, Image Size: 0x9d000"
+"10:07:22.8405954 AM","loader2.exe","2056","Load Image","C:\Windows\System32\ucrtbase.dll","SUCCESS","Image Base: 0x7fff54000000, Image Size: 0x100000"
+"10:07:22.8406521 AM","loader2.exe","2056","RegOpenKey","HKLM\SYSTEM\CurrentControlSet\Control\Session Manager","REPARSE","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.8406598 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Session Manager","SUCCESS","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.8406684 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Session Manager\ResourcePolicies","NAME NOT FOUND","Length: 24"
+"10:07:22.8406775 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Control\Session Manager","SUCCESS",""
+"10:07:22.8407418 AM","loader2.exe","2056","Thread Create","","SUCCESS","Thread ID: 1700"
+"10:07:22.8412264 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Nls\Sorting\Versions","REPARSE","Desired Access: Read"
+"10:07:22.8412351 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Nls\Sorting\Versions","SUCCESS","Desired Access: Read"
+"10:07:22.8412480 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Nls\Sorting\Versions\(Default)","SUCCESS","Type: REG_SZ, Length: 18, Data: 00060305"
+"10:07:22.8412570 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Control\Nls\Sorting\Versions\000603xx","SUCCESS","Type: REG_SZ, Length: 26, Data: kernel32.dll"
+"10:07:22.8416305 AM","loader2.exe","2056","CreateFile","C:\Windows\System32\imm32.dll","SUCCESS","Desired Access: Read Attributes, Disposition: Open, Options: Open Reparse Point, Attributes: n/a, ShareMode: Read, Write, Delete, AllocationSize: n/a, OpenResult: Opened"
+"10:07:22.8416534 AM","loader2.exe","2056","QueryBasicInformationFile","C:\Windows\System32\imm32.dll","SUCCESS","CreationTime: 4/1/2026 3:54:02 PM, LastAccessTime: 6/4/2026 10:07:22 AM, LastWriteTime: 4/1/2026 3:54:02 PM, ChangeTime: 4/16/2026 2:27:09 PM, FileAttributes: A"
+"10:07:22.8416593 AM","loader2.exe","2056","CloseFile","C:\Windows\System32\imm32.dll","SUCCESS",""
+"10:07:22.8417050 AM","loader2.exe","2056","CreateFile","C:\Windows\System32\imm32.dll","SUCCESS","Desired Access: Read Data/List Directory, Synchronize, Disposition: Open, Options: Synchronous IO Non-Alert, Non-Directory File, Attributes: n/a, ShareMode: Read, Delete, AllocationSize: n/a, OpenResult: Opened"
+"10:07:22.8417301 AM","loader2.exe","2056","CreateFileMapping","C:\Windows\System32\imm32.dll","FILE LOCKED WITH ONLY READERS","SyncType: SyncTypeCreateSection, PageProtection: PAGE_EXECUTE_READWRITE|PAGE_NOCACHE"
+"10:07:22.8417376 AM","loader2.exe","2056","QueryStandardInformationFile","C:\Windows\System32\imm32.dll","SUCCESS","AllocationSize: 188,416, EndOfFile: 184,456, NumberOfLinks: 2, DeletePending: False, Directory: False"
+"10:07:22.8417469 AM","loader2.exe","2056","CreateFileMapping","C:\Windows\System32\imm32.dll","SUCCESS","SyncType: SyncTypeOther"
+"10:07:22.8417884 AM","loader2.exe","2056","CloseFile","C:\Windows\System32\imm32.dll","SUCCESS",""
+"10:07:22.8418441 AM","loader2.exe","2056","Load Image","C:\Windows\System32\imm32.dll","SUCCESS","Image Base: 0x7fff561a0000, Image Size: 0x2f000"
+"10:07:22.8419317 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Error Message Instrument\","REPARSE","Desired Access: Read"
+"10:07:22.8419403 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Control\Error Message Instrument","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8419832 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options","SUCCESS","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.8419981 AM","loader2.exe","2056","RegOpenKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\loader2.exe","NAME NOT FOUND","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.8420069 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Policies\Microsoft\Windows\Display","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8420251 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Policies\Microsoft\Windows\Display","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8420313 AM","loader2.exe","2056","RegOpenKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\loader2.exe","NAME NOT FOUND","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.8420377 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Policies\Microsoft\Windows\Display","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8420452 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Policies\Microsoft\Windows\Display","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8420642 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS","Desired Access: Read"
+"10:07:22.8420735 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize\DisableMetaFiles","NAME NOT FOUND","Length: 20"
+"10:07:22.8420816 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS",""
+"10:07:22.8420875 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS","Desired Access: Read"
+"10:07:22.8420942 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize\DisableUmpdBufferSizeCheck","NAME NOT FOUND","Length: 20"
+"10:07:22.8421001 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS",""
+"10:07:22.8421268 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\loader2.exe","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8421454 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Policies\Microsoft\Windows\Control Panel\Desktop","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8421540 AM","loader2.exe","2056","RegOpenKey","HKCU\Software\Policies\Microsoft\Windows\Control Panel\Desktop","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8421658 AM","loader2.exe","2056","RegOpenKey","HKCU\Control Panel\Desktop","SUCCESS","Desired Access: Read"
+"10:07:22.8421748 AM","loader2.exe","2056","RegQueryValue","HKCU\Control Panel\Desktop\EnablePerProcessSystemDPI","NAME NOT FOUND","Length: 20"
+"10:07:22.8421848 AM","loader2.exe","2056","RegCloseKey","HKCU\Control Panel\Desktop","SUCCESS",""
+"10:07:22.8422540 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\Compatibility32","SUCCESS","Desired Access: Read"
+"10:07:22.8422823 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Compatibility32\loader2","NAME NOT FOUND","Length: 172"
+"10:07:22.8422933 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Compatibility32","SUCCESS",""
+"10:07:22.8423019 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\IME Compatibility","NAME NOT FOUND","Desired Access: Read"
+"10:07:22.8425753 AM","loader2.exe","2056","RegOpenKey","HKLM","SUCCESS","Desired Access: Maximum Allowed, Granted Access: Read"
+"10:07:22.8425881 AM","loader2.exe","2056","RegQueryKey","HKLM","SUCCESS","Query: HandleTags, HandleTags: 0x0"
+"10:07:22.8425958 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows","SUCCESS","Desired Access: Read"
+"10:07:22.8426070 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\LoadAppInit_DLLs","SUCCESS","Type: REG_DWORD, Length: 4, Data: 0"
+"10:07:22.8426179 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows","SUCCESS",""
+"10:07:22.8426294 AM","loader2.exe","2056","RegOpenKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\loader2.exe","NAME NOT FOUND","Desired Access: Query Value, Enumerate Sub Keys"
+"10:07:22.8437037 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS","Desired Access: Read"
+"10:07:22.8437292 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize\DisableMetaFiles","NAME NOT FOUND","Length: 20"
+"10:07:22.8437402 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS",""
+"10:07:22.8437493 AM","loader2.exe","2056","RegOpenKey","HKLM\Software\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS","Desired Access: Read"
+"10:07:22.8437575 AM","loader2.exe","2056","RegQueryValue","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize\DisableUmpdBufferSizeCheck","NAME NOT FOUND","Length: 20"
+"10:07:22.8437643 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\GRE_Initialize","SUCCESS",""
+"10:07:22.8438573 AM","loader2.exe","2056","Thread Exit","","SUCCESS","Thread ID: 4496, User Time: 0.0000000, Kernel Time: 0.0000000"
+"10:07:22.8936442 AM","loader2.exe","2056","Thread Exit","","SUCCESS","Thread ID: 1700, User Time: 0.0000000, Kernel Time: 0.0000000"
+"10:07:23.0069828 AM","loader2.exe","2056","Process Exit","","SUCCESS","Exit Status: 0, User Time: 0.0000000 seconds, Kernel Time: 0.0000000 seconds, Private Bytes: 647,168, Peak Private Bytes: 688,128, Working Set: 3,903,488, Peak Working Set: 3,907,584"
+"10:07:23.0070168 AM","loader2.exe","2056","RegOpenKey","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000","SUCCESS","Desired Access: All Access"
+"10:07:23.0070363 AM","loader2.exe","2056","RegQueryValue","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000\\Device\HarddiskVolume3\Users\test_user\Documents\loader2.exe","SUCCESS","Type: REG_BINARY, Length: 24, Data: E6 ED 45 3A 3C F4 DC 01 00 00 00 00 00 00 00 00"
+"10:07:23.0070639 AM","loader2.exe","2056","RegSetValue","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000\\Device\HarddiskVolume3\Users\test_user\Documents\loader2.exe","SUCCESS","Type: REG_BINARY, Length: 24, Data: 6B 4C 73 3A 3C F4 DC 01 00 00 00 00 00 00 00 00"
+"10:07:23.0071702 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Services\bam\State\UserSettings\S-1-5-21-307119187-292841094-1427567385-1000","SUCCESS",""
+"10:07:23.0072647 AM","loader2.exe","2056","CloseFile","C:\Users\test_user\Documents","SUCCESS",""
+"10:07:23.1560462 AM","loader2.exe","2056","RegCloseKey","HKLM\System\CurrentControlSet\Control\Nls\Sorting\Versions","SUCCESS",""
+"10:07:23.1560527 AM","loader2.exe","2056","RegCloseKey","HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options","SUCCESS",""
+"10:07:23.1560598 AM","loader2.exe","2056","RegCloseKey","HKLM","SUCCESS",""

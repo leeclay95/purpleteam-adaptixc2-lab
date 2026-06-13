@@ -1,0 +1,68 @@
+# Binaries — do not commit implants or loaders to a public repo
+*.exe
+*.dll
+*.so
+*.o
+*.obj
+*.bin
+*.coff
+
+# Encrypted payloads and keys
+enc_payload*
+masked_key*
+key_mask*
+*.key
+*.pem
+*.pfx
+
+# Memory images — too large and contain sensitive host data
+*.raw
+*.vmem
+*.dmp
+*.mem
+windows_ram*
+
+# C2 config / profile files
+profile.yaml
+*.axs
+ax_config*
+
+# Process Monitor raw captures (keep renamed CSVs in 02-evasion-loader/)
+*.pml
+
+# Adaptix server artifacts
+adaptixserver
+dist/
+server-dist/
+
+# Build artifacts
+*.o.d
+build/
+_bin/
+
+# Go
+vendor/
+go.sum
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.orig
+
+# Personal notes / drafts not intended for the repo
+*-draft.md
+*-notes.md
+CLAUDE.md
+.claude/
+*.csv*
