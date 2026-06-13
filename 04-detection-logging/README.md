@@ -55,19 +55,17 @@ Both alerts were collected by Wazuh with `event.severity: 100` and forwarded to 
 
 ---
 
-## What Wasn't Caught: loader2.exe — Zero Alerts
+## What Wasn't Caught: loader_evade.exe — Zero Alerts
 
-`loader2.exe` (and the intermediate `loader_evade.exe`) executed on the same system with the same defensive stack active and generated **zero alerts** across all three layers.
+`loader_evade.exe` executed on the same system with the same defensive stack active and generated **zero alerts** across all three layers.
 
-### Why Rustinel's YARA Rules Missed loader2.exe
+### Why Rustinel's YARA Rules Missed It
 
 The YARA rules that caught `dns_agent_53.exe` target:
 - Winsock string references (`ws2_32.dll`, `WSAStartup`, `Str_Win32_Winsock2_Library`)
 - Socket pattern imports (`network_tcp_listen`)
 
-`loader2.exe` has none of these in any form. Its IAT contains only `ExitProcess`, `LoadLibraryA`, `GetProcAddress`, `GetTickCount`, `GetCursorPos`. All DLL and function names — including `"ntdll.dll"`, `"EtwEventWrite"`, `"AmsiScanBuffer"` — are XOR-encoded in `strings_enc.h` and decoded at runtime to stack-local buffers. `strings`, FLOSS, and YARA string scanners find zero plaintext sensitive names anywhere in the binary.
-
-The payload is an RC4-encrypted COFF object — not a PE. No `MZ` magic, no PE structure, no `ws2_32.dll` import table. Winsock is resolved at runtime by the COFF loader using the `DLL$Function` mechanism after the 3-minute prelude completes.
+`loader_evade.exe` has none of these. Its IAT contains only `ExitProcess`, `GetProcAddress`, `GetTickCount`, `LoadLibraryA`. The `ws2_32.dll` string never appears anywhere in the binary — Winsock is loaded at runtime by the reflective loader's IAT fixup routine when it resolves imports for the embedded dns_agent PE. By the time Winsock is loaded, YARA rules have already run against the loader binary's static characteristics and found nothing.
 
 The embedded dns_agent payload in `.rdata` is RC4 ciphertext — no Winsock strings, no PE headers, no structure for YARA to parse.
 
@@ -119,21 +117,14 @@ No registry writes. No auto-elevating binary launch. All operations occur within
 |---|---|---|---|
 | `dns_agent_53.exe` executed directly | Rustinel YARA | **Caught** | Winsock import strings in PE |
 | `dns_agent_53.exe` executed directly | Rustinel YARA | **Caught** | `network_tcp_listen` import pattern |
-| `loader_evade.exe` executed | Rustinel YARA | **Missed** | No Winsock strings, RC4-encrypted PE payload |
+| `loader_evade.exe` executed | Rustinel YARA | **Missed** | No Winsock strings, RC4-encrypted payload |
 | `loader_evade.exe` executed | Defender static | **Missed** | No djb2, no CRT patterns, minimal IAT |
 | `loader_evade.exe` behavioral | Defender ML | **Missed** | ETW blinded, Monte Carlo prelude |
-| `loader2.exe` executed | Rustinel YARA | **Missed** | XOR string table — zero plaintext names; COFF payload, no PE surface |
-| `loader2.exe` executed | Defender static | **Missed** | No CRT, no IAT signals, COFF not PE |
-| `loader2.exe` behavioral | Defender ML | **Missed** | ETW + AMSI blinded, 3-stage prelude, cursor check |
 | `uacbybass regshellcmd` BOF | Defender behavioral | **Caught** | `Behavior:Win32/UACBypassExp.gen!G` |
 | `uacbybass sspi` BOF | Defender behavioral | **Missed** | No behavioral rule for SSPI technique |
 | `getsystem token` BOF | Defender + Wazuh | **Missed** | In-process token manipulation, no new process |
-| Credential dump BOF | Defender + Wazuh | **Missed** | In-process COFF via `bof_exec_sub`, no LSASS dump file |
-| DNS C2 beaconing | Wazuh / network | **Missed** | Raw UDP DNS indistinguishable from normal traffic |
-
-![Credential dump — no Wazuh alerts](../assets/cred_dump.png)
-
-*Adaptix C2 console alongside Wazuh during the credential dump BOF. The COFF executes in-process via `bof_exec_sub` — no LSASS dump file written to disk, no process injection, no alert generated at any layer.*
+| Credential dump BOF | Defender + Wazuh | **Missed** | In-process COFF, no LSASS memory dump file |
+| DNS C2 beaconing | Wazuh / network | **Present** | Hard to catch outbound |
 
 ---
 
@@ -149,7 +140,7 @@ Sysmon was active and logging process creation, network events, and registry cha
 
 ### Process Monitor
 
-Process Monitor (`Logfile.CSV`, `loaderv2logfile.csv`) traced `loader2.exe` at the API call level. The trace showed minimal DLL loads at startup, no calls to high-risk APIs visible in the static load sequence, and no Defender quarantine events during the execution window.
+Process Monitor traced `loader2.exe` at the API call level. The trace showed minimal DLL loads at startup, no calls to high-risk APIs visible in the static load sequence, and no Defender quarantine events during the execution window.
 
 ---
 
