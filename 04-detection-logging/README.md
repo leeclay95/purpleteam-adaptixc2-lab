@@ -55,9 +55,9 @@ Both alerts were collected by Wazuh with `event.severity: 100` and forwarded to 
 
 ---
 
-## What Wasn't Caught: loader_evade.exe — Zero Alerts
+## What Wasn't Caught: loader2.exe — Zero Alerts
 
-`loader_evade.exe` executed on the same system with the same defensive stack active and generated **zero alerts** across all three layers.
+`loader2.exe` executed on the same system with the same defensive stack active and generated **zero alerts** across all three layers.
 
 ### Why Rustinel's YARA Rules Missed It
 
@@ -65,13 +65,13 @@ The YARA rules that caught `dns_agent_53.exe` target:
 - Winsock string references (`ws2_32.dll`, `WSAStartup`, `Str_Win32_Winsock2_Library`)
 - Socket pattern imports (`network_tcp_listen`)
 
-`loader_evade.exe` has none of these. Its IAT contains only `ExitProcess`, `GetProcAddress`, `GetTickCount`, `LoadLibraryA`. The `ws2_32.dll` string never appears anywhere in the binary — Winsock is loaded at runtime by the reflective loader's IAT fixup routine when it resolves imports for the embedded dns_agent PE. By the time Winsock is loaded, YARA rules have already run against the loader binary's static characteristics and found nothing.
+`loader2.exe` has none of these. Its IAT contains only `ExitProcess`, `GetProcAddress`, `GetTickCount`, `LoadLibraryA`. The `ws2_32.dll` string never appears anywhere in the binary — Winsock is loaded at runtime by the reflective loader's IAT fixup routine when it resolves imports for the embedded dns_agent PE. By the time Winsock is loaded, YARA rules have already run against the loader binary's static characteristics and found nothing.
 
 The embedded dns_agent payload in `.rdata` is RC4 ciphertext — no Winsock strings, no PE headers, no structure for YARA to parse.
 
 ### Why Defender's Static Scanner Missed It
 
-The `VirTool:Win64/MeterBof.A` static detection that caught the first loader targeted the djb2 hash seed `0x1505` combined with the `shl r8d,5; add; xor` inner loop pattern. `loader_evade.exe` uses SysWhispers3 for API resolution — no djb2, no hash function, no constant `0x1505` anywhere in the binary.
+The `VirTool:Win64/MeterBof.A` static detection that caught the first loader targeted the djb2 hash seed `0x1505` combined with the `shl r8d,5; add; xor` inner loop pattern. `loader2.exe` uses SysWhispers3 for API resolution — no djb2, no hash function, no constant `0x1505` anywhere in the binary.
 
 The CRT-free build removes all the standard startup code patterns that YARA rules commonly anchor to. The binary looks unlike any known malware family's compiler output.
 
@@ -117,9 +117,9 @@ No registry writes. No auto-elevating binary launch. All operations occur within
 |---|---|---|---|
 | `dns_agent_53.exe` executed directly | Rustinel YARA | **Caught** | Winsock import strings in PE |
 | `dns_agent_53.exe` executed directly | Rustinel YARA | **Caught** | `network_tcp_listen` import pattern |
-| `loader_evade.exe` executed | Rustinel YARA | **Missed** | No Winsock strings, RC4-encrypted payload |
-| `loader_evade.exe` executed | Defender static | **Missed** | No djb2, no CRT patterns, minimal IAT |
-| `loader_evade.exe` behavioral | Defender ML | **Missed** | ETW blinded, Monte Carlo prelude |
+| `loader2.exe` executed | Rustinel YARA | **Missed** | No Winsock strings, RC4-encrypted payload |
+| `loader2.exe` executed | Defender static | **Missed** | No djb2, no CRT patterns, minimal IAT |
+| `loader2.exe` behavioral | Defender ML | **Missed** | ETW blinded, Monte Carlo prelude |
 | `uacbybass regshellcmd` BOF | Defender behavioral | **Caught** | `Behavior:Win32/UACBypassExp.gen!G` |
 | `uacbybass sspi` BOF | Defender behavioral | **Missed** | No behavioral rule for SSPI technique |
 | `getsystem token` BOF | Defender + Wazuh | **Missed** | In-process token manipulation, no new process |
@@ -132,7 +132,7 @@ No registry writes. No auto-elevating binary launch. All operations occur within
 
 ### Wazuh
 
-Wazuh captured the two YARA alerts from Rustinel for the direct dns_agent execution. For `loader_evade.exe`: no alerts. The DNS C2 channel produced no alerts from any log source — UDP port 53 traffic is not inspected for C2 characteristics by default.
+Wazuh captured the two YARA alerts from Rustinel for the direct dns_agent execution. For `loader2.exe`: no alerts. The DNS C2 channel produced no alerts from any log source — UDP port 53 traffic is not inspected for C2 characteristics by default.
 
 ### Sysmon
 
