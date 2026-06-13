@@ -1,13 +1,5 @@
 # Purple Team Lab: DNS C2 with Adaptix and EDR Evasion Research
 
-**Author:** leeha  
-**Lab Date:** 2026-05-26 to 2026-06-04  
-**Framework:** Adaptix C2 v1.2.0  
-**Target:** Windows 10 x64 (DESKTOP-N46SBV9)  
-**Classification:** Authorized red team research
-
----
-
 ## Overview
 
 This repository documents end-to-end purple team research covering a custom DNS command-and-control stack built on Adaptix C2, multiple AV/EDR evasion techniques, privilege escalation via UAC bypass, and the memory forensics required to find what standard detections missed.
@@ -30,8 +22,7 @@ The lab ran on a single Windows 10 system with three concurrent defensive layers
 - **dns_agent** — Go Adaptix agent handler plugin
 - **dns_agent_53.exe** — Windows x64 C implant communicating via raw DNS TXT records, bypassing the Windows DNS resolver entirely
 - **dns-bof-kit** — Collection of Cobalt Strike-compatible BOFs (AD enumeration, credential operations, UAC bypass, token manipulation, process control)
-- **loader_evade.exe** — Intermediate reflective PE loader; SysWhispers3 indirect syscalls, ETW blinding, Monte Carlo prelude
-- **loader2.exe** — Final payload: COFF BOF architecture (no PE surface), XOR runtime string obfuscation, custom indirect syscalls with Hell's Gate SSN harvesting, AMSI + ETW blinding, three-stage CPU prelude with cursor delta detection, DNS-over-TCP, VEH crash recovery for secondary BOFs
+- **loader2.exe** — Reflective PE loader carrying the agent RC4-encrypted in `.rdata`; uses SysWhispers3 indirect syscalls, ETW blinding, and Monte Carlo sandbox evasion
 
 ---
 
@@ -47,7 +38,7 @@ Wazuh collected both as Critical severity alerts tagged to the process at the mo
 
 ### What Wasn't Caught
 
-`loader_evade.exe` landed with **zero alerts** across all three layers:
+`loader2.exe` landed with **zero alerts** across all three layers:
 - No YARA hits — RC4-encrypted payload, no PE headers, no Winsock strings, no djb2 hash, minimal IAT
 - No Defender static detection — import table looks like a benign timing utility
 - No Defender behavioral detection — ETW blinded before any allocation, Monte Carlo prelude defeats sandbox timing analysis
@@ -81,13 +72,13 @@ Memory forensics (Volatility 3) was required to reconstruct what actually happen
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  Kali Linux (attacker)         VMware host-only network     │
-│  Adaptix C2 v1.2.0             192.168.67.132               │
+│  Adaptix C2 v1.2.0             192.168.67.128               │
 │  BeaconDNS listener :53                                      │
 └────────────────────────┬────────────────────────────────────┘
                          │ UDP port 53 (raw DNS)
 ┌────────────────────────▼────────────────────────────────────┐
 │  Windows 10 20H2 (target)       DESKTOP-N46SBV9             │
-│  192.168.67.128                                              │
+│  192.168.67.132                                             │
 │                                                              │
 │  Microsoft Defender (active + real-time protection)         │
 │  Rustinel EDR     (YARA rules via ETW, process-start hook)  │
@@ -103,7 +94,7 @@ Memory forensics (Volatility 3) was required to reconstruct what actually happen
 | Time (UTC) | Event | Detection |
 |---|---|---|
 | 14:05:04 | System boot | — |
-| 14:07:35 | `loader2.exe` executed — dns_agent_bof.c COFF loaded in-process via DNS-over-TCP | **None** |
+| 14:07:35 | `loader2.exe` executed — dns_agent reflectively loaded | **None** |
 | ~14:07:xx | `uacbybass regshellcmd` BOF executed via DNS C2 | **Defender kills process** |
 | 14:09:42 | `uacbybass sspi` BOF — SYSTEM beacon connects | **None** |
 | ~14:10:xx | `getsystem token` BOF — SYSTEM impersonation on thread | **None** |
